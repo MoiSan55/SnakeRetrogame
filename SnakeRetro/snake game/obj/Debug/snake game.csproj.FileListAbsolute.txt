@@ -82,3 +82,13 @@ C:\Users\Moises (Chá)\Desktop\universidad\6to Semestre\Ingeniería de Software 
 C:\Users\Moises (Chá)\Desktop\universidad\6to Semestre\Ingeniería de Software 2022-1\csharpproyect\snake - Tutoriales y mas - By Edark\snake game\obj\Debug\snake game.csproj.CoreCompileInputs.cache
 C:\Users\Moises (Chá)\Desktop\universidad\6to Semestre\Ingeniería de Software 2022-1\csharpproyect\snake - Tutoriales y mas - By Edark\snake game\obj\Debug\snake game.exe
 C:\Users\Moises (Chá)\Desktop\universidad\6to Semestre\Ingeniería de Software 2022-1\csharpproyect\snake - Tutoriales y mas - By Edark\snake game\obj\Debug\snake game.pdb
+C:\Users\Moises (Chá)\Desktop\universidad\6to Semestre\Ingeniería de Software 2022-1\csharpproyect\SnakeRetro\snake game\bin\Debug\snake game.exe
+C:\Users\Moises (Chá)\Desktop\universidad\6to Semestre\Ingeniería de Software 2022-1\csharpproyect\SnakeRetro\snake game\bin\Debug\snake game.pdb
+C:\Users\Moises (Chá)\Desktop\universidad\6to Semestre\Ingeniería de Software 2022-1\csharpproyect\SnakeRetro\snake game\obj\Debug\snake game.csproj.AssemblyReference.cache
+C:\Users\Moises (Chá)\Desktop\universidad\6to Semestre\Ingeniería de Software 2022-1\csharpproyect\SnakeRetro\snake game\obj\Debug\snake_game.Form1.resources
+C:\Users\Moises (Chá)\Desktop\universidad\6to Semestre\Ingeniería de Software 2022-1\csharpproyect\SnakeRetro\snake game\obj\Debug\snake_game.Properties.Resources.resources
+C:\Users\Moises (Chá)\Desktop\universidad\6to Semestre\Ingeniería de Software 2022-1\csharpproyect\SnakeRetro\snake game\obj\Debug\snake_game.reglas.resources
+C:\Users\Moises (Chá)\Desktop\universidad\6to Semestre\Ingeniería de Software 2022-1\csharpproyect\SnakeRetro\snake game\obj\Debug\snake game.csproj.GenerateResource.cache
+C:\Users\Moises (Chá)\Desktop\universidad\6to Semestre\Ingeniería de Software 2022-1\csharpproyect\SnakeRetro\snake game\obj\Debug\snake game.csproj.CoreCompileInputs.cache
+C:\Users\Moises (Chá)\Desktop\universidad\6to Semestre\Ingeniería de Software 2022-1\csharpproyect\SnakeRetro\snake game\obj\Debug\snake game.exe
+C:\Users\Moises (Chá)\Desktop\universidad\6to Semestre\Ingeniería de Software 2022-1\csharpproyect\SnakeRetro\snake game\obj\Debug\snake game.pdb

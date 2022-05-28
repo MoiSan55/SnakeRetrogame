@@ -24,11 +24,14 @@ namespace snake_game
         bool arriba = false;
         bool abajo = false;
         int score = 0;// --- puntuacion
-
+        int ModoJuego = 1;
+        int Seg = 0;
+        int Min = 0;
         public Form1()
         {
             InitializeComponent();
             // mostrar pantalla de reglas
+            DificultadSnake();
             reglas regla = new reglas();
             regla.Show();
             comida = new Comida(randcomida);//posiciona la comida
@@ -53,6 +56,18 @@ namespace snake_game
                 lblNivDif.Text = "Fácil";
             else if (dificultad.configuracionDificultad() == 3)
                 lblNivDif.Text = "Dificil";
+
+            if (dificultad.ModoJuego() == 1)
+                ModoJuego = 1;
+            if (dificultad.ModoJuego() == 2)
+            {
+                ModoJuego = 2;
+                lblMinutos.Visible = true;
+
+                Seg = dificultad.Seg;
+                Min = dificultad.Min;
+            }
+
         }
         // evento de las teclas
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -60,7 +75,7 @@ namespace snake_game
             // si preciona la barra space (con la que inicia el juego)
             if (e.KeyData == Keys.Space)
             {
-                player.SoundLocation = "C:/Users/Moises (Chá)/Desktop/universidad/6to Semestre/Ingeniería de Software 2022-1/csharpproyect/snake - Tutoriales y mas - By Edark/snake game/Resources/ini.wav";// direccion del sonido
+                player.SoundLocation = "C:/Users/Moises (Chá)/Desktop/universidad/6to Semestre/Ingeniería de Software 2022-1/csharpproyect/SnakeRetro/snake game/Resources/ini.wav";// direccion del sonido
                 player.Play();// suena sonido
 
                 timer1.Enabled = true;
@@ -134,7 +149,7 @@ namespace snake_game
                 // si la serpiente choca con comida
                 if (snakes.SnakeRec[i].IntersectsWith(comida.comidarec))
                 {
-                    player.SoundLocation = "C:/Users/Moises (Chá)/Desktop/universidad/6to Semestre/Ingeniería de Software 2022-1/csharpproyect/snake - Tutoriales y mas - By Edark/snake game/Resources/pop.wav";// direccion del sonido
+                    player.SoundLocation = "C:/Users/Moises (Chá)/Desktop/universidad/6to Semestre/Ingeniería de Software 2022-1/csharpproyect/SnakeRetro/snake game/Resources/pop.wav";// direccion del sonido
                     player.Play();// suena sonido
 
                     score += 1; // la puntuacion sube de 1 en 1
@@ -142,9 +157,33 @@ namespace snake_game
                     comida.locaciondecomida(randcomida);// reaparece la comida en otro lugar
 
                     //Checar si es buena posicion este codigo
-                    player.SoundLocation = "C:/Users/Moises (Chá)/Desktop/universidad/6to Semestre/Ingeniería de Software 2022-1/csharpproyect/snake - Tutoriales y mas - By Edark/snake game/Resources/pop.wav";
+                    player.SoundLocation = "C:/Users/Moises (Chá)/Desktop/universidad/6to Semestre/Ingeniería de Software 2022-1/csharpproyect/SnakeRetro/snake gameResources/pop.wav";
                     player.Play();
                 }
+            }
+
+            if(ModoJuego == 2) 
+            {
+
+                Seg--;
+                if (Seg < 10) lblSeg.Text = "0" + Seg.ToString();
+                if (Min < 10) lblMinutos.Text = "0" + Min.ToString();
+                
+                if(Seg == 0 && Min > 0)
+                {
+                    Min--;
+                    Seg = 60;
+                }
+
+                if(Seg == 0 && Min == 0)
+                {
+                    timer1.Stop();
+                    MessageBox.Show("Sexzczxc acabo", "GAME OVER", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
+
+
+
             }
         }
 
@@ -152,23 +191,23 @@ namespace snake_game
         {
             for (int i = 1; i < snakes.SnakeRec.Length; i++) // verifica el tamaño de snake
             {
-                if (snakes.SnakeRec[0].IntersectsWith(snakes.SnakeRec[1])) // si choca con ella misma * (solo los primeros 3 cuadros)
+                if (snakes.SnakeRec[0].IntersectsWith(snakes.SnakeRec[2])) // si choca con ella misma * (solo los primeros 3 cuadros)
                 {
-                    player.SoundLocation = "C:/Users/Moises (Chá)/Desktop/universidad/6to Semestre/Ingeniería de Software 2022-1/csharpproyect/snake - Tutoriales y mas - By Edark/snake game/Resources/boom.wav";// direccion del sonido
+                    player.SoundLocation = "C:/Users/Moises (Chá)/Desktop/universidad/6to Semestre/Ingeniería de Software 2022-1/csharpproyect/SnakeRetro/snake game/Resources/boom.wav";// direccion del sonido
                     player.Play();// suena sonido
                     reiniciar(); // se reinicia el juego 
                 }
             }
             if (snakes.SnakeRec[0].X < 170 || snakes.SnakeRec[0].X > 1000) // si choca ala izquierda o derecha 
             {
-                player.SoundLocation = "C:/Users/Moises (Chá)/Desktop/universidad/6to Semestre/Ingeniería de Software 2022-1/csharpproyect/snake - Tutoriales y mas - By Edark/snake game/Resources/boom.wav";// direccion del sonido
+                player.SoundLocation = "C:/Users/Moises (Chá)/Desktop/universidad/6to Semestre/Ingeniería de Software 2022-1/csharpproyect/SnakeRetro/snake game/Resources/boom.wav";// direccion del sonido
                 player.Play();// suena sonido
                 reiniciar();// se reinicia el juego 
 
             }
             if (snakes.SnakeRec[0].Y < 180 || snakes.SnakeRec[0].Y > 550) // si choca abajor o arriba 
             {
-                player.SoundLocation = "C:/Users/Moises (Chá)/Desktop/universidad/6to Semestre/Ingeniería de Software 2022-1/csharpproyect/snake - Tutoriales y mas - By Edark/snake game/Resources/boom.wav";
+                player.SoundLocation = "C:/Users/Moises (Chá)/Desktop/universidad/6to Semestre/Ingeniería de Software 2022-1/csharpproyect/SnakeRetro/snake game/Resources/boom.wav";
                 player.Play();
                 reiniciar();// se reinicia el juego 
             }
@@ -237,7 +276,7 @@ namespace snake_game
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            player.SoundLocation = "C:/Users/Moises (Chá)/Desktop/universidad/6to Semestre/Ingeniería de Software 2022-1/csharpproyect/snake - Tutoriales y mas - By Edark/snake game/Resources/pop.wav";
+            player.SoundLocation = "C:/Users/Moises (Chá)/Desktop/universidad/6to Semestre/Ingeniería de Software 2022-1/csharpproyect/SnakeRetro/snake game/Resources/pop.wav";
             player.Play();
             // mostrar pantalla de reglas
             reglas regla = new reglas();

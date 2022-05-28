@@ -41,6 +41,9 @@
             this.lblDificultad = new System.Windows.Forms.Label();
             this.lblNivDif = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
+            this.lblMinutos = new System.Windows.Forms.Label();
+            this.lblSeg = new System.Windows.Forms.Label();
+            this.lblDoblepunto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -177,6 +180,45 @@
             this.lblScore.TabIndex = 16;
             this.lblScore.Text = "0";
             // 
+            // lblMinutos
+            // 
+            this.lblMinutos.AutoSize = true;
+            this.lblMinutos.BackColor = System.Drawing.Color.Transparent;
+            this.lblMinutos.Font = new System.Drawing.Font("Lucida Sans Typewriter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinutos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblMinutos.Location = new System.Drawing.Point(1051, 354);
+            this.lblMinutos.Name = "lblMinutos";
+            this.lblMinutos.Size = new System.Drawing.Size(23, 23);
+            this.lblMinutos.TabIndex = 17;
+            this.lblMinutos.Text = "0";
+            this.lblMinutos.Visible = false;
+            // 
+            // lblSeg
+            // 
+            this.lblSeg.AutoSize = true;
+            this.lblSeg.BackColor = System.Drawing.Color.Transparent;
+            this.lblSeg.Font = new System.Drawing.Font("Lucida Sans Typewriter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeg.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSeg.Location = new System.Drawing.Point(1091, 354);
+            this.lblSeg.Name = "lblSeg";
+            this.lblSeg.Size = new System.Drawing.Size(36, 23);
+            this.lblSeg.TabIndex = 18;
+            this.lblSeg.Text = "00";
+            this.lblSeg.Visible = false;
+            // 
+            // lblDoblepunto
+            // 
+            this.lblDoblepunto.AutoSize = true;
+            this.lblDoblepunto.BackColor = System.Drawing.Color.Transparent;
+            this.lblDoblepunto.Font = new System.Drawing.Font("Lucida Sans Typewriter", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDoblepunto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblDoblepunto.Location = new System.Drawing.Point(1072, 354);
+            this.lblDoblepunto.Name = "lblDoblepunto";
+            this.lblDoblepunto.Size = new System.Drawing.Size(23, 23);
+            this.lblDoblepunto.TabIndex = 19;
+            this.lblDoblepunto.Text = ":";
+            this.lblDoblepunto.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +227,9 @@
             this.BackgroundImage = global::snake_game.Properties.Resources.Mapa1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1184, 749);
+            this.Controls.Add(this.lblDoblepunto);
+            this.Controls.Add(this.lblSeg);
+            this.Controls.Add(this.lblMinutos);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.lblNivDif);
             this.Controls.Add(this.lblDificultad);
@@ -227,6 +272,9 @@
         private System.Windows.Forms.Label lblDificultad;
         private System.Windows.Forms.Label lblNivDif;
         private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.Label lblMinutos;
+        private System.Windows.Forms.Label lblSeg;
+        private System.Windows.Forms.Label lblDoblepunto;
     }
 }
 

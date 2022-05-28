@@ -27,6 +27,7 @@ namespace snake_game
         int ModoJuego = 1;
         int Seg = 0;
         int Min = 0;
+        int UnSegundo = 10;
         public Form1()
         {
             InitializeComponent();
@@ -62,10 +63,14 @@ namespace snake_game
             if (dificultad.ModoJuego() == 2)
             {
                 ModoJuego = 2;
-                lblMinutos.Visible = true;
-
+                dificultad.Cronometro();
+                
                 Seg = dificultad.Seg;
                 Min = dificultad.Min;
+
+                lblTemporizador.Visible = true;
+
+                lblTemporizador.Text = Min.ToString() + ":" + Seg.ToString();
             }
 
         }
@@ -157,31 +162,37 @@ namespace snake_game
                     comida.locaciondecomida(randcomida);// reaparece la comida en otro lugar
 
                     //Checar si es buena posicion este codigo
-                    player.SoundLocation = "C:/Users/Moises (Chá)/Desktop/universidad/6to Semestre/Ingeniería de Software 2022-1/csharpproyect/SnakeRetro/snake gameResources/pop.wav";
+                    player.SoundLocation = "C:/Users/Moises (Chá)/Desktop/universidad/6to Semestre/Ingeniería de Software 2022-1/csharpproyect/SnakeRetro/snake game/Resources/pop.wav";
                     player.Play();
                 }
             }
 
             if(ModoJuego == 2) 
             {
-
-                Seg--;
-                if (Seg < 10) lblSeg.Text = "0" + Seg.ToString();
-                if (Min < 10) lblMinutos.Text = "0" + Min.ToString();
+                UnSegundo--;
+                if (UnSegundo == 0)
+                {
+                    UnSegundo = 10;
+                    Seg--;
+                }
+                string Minu = Min.ToString();
+                string Segu = Seg.ToString();
+                if (Seg < 10) Segu = "0" + Seg.ToString();
+                if (Min < 10) Minu = "0" + Min.ToString(); ;
                 
                 if(Seg == 0 && Min > 0)
                 {
-                    Min--;
+                    Min -= 1;
                     Seg = 60;
                 }
 
-                if(Seg == 0 && Min == 0)
+                if(Seg <= 0 && Min <= 0)
                 {
                     timer1.Stop();
-                    MessageBox.Show("Sexzczxc acabo", "GAME OVER", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se acabo", "GAME OVER", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                
 
+                lblTemporizador.Text = Minu + ":" + Segu;
 
 
             }

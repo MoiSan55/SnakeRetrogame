@@ -21,7 +21,7 @@ namespace snake_game
 
         public int ModoJuego()
         {
-            return 1;
+            return 2;
         }
 
     }
